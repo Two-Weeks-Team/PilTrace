@@ -67,3 +67,9 @@
 - API 요청 타입: GenerateEssayPhase1/2/3Request, CreateDiaryRequest, CreateEssayRequest, UpdateEssayRequest, GuestAccessRequest
 - 공통 응답: ApiError, ApiSuccess<T>
 - TypeScript 타입 체크: ✓ PASSED (npx tsc --noEmit)
+
+## [T6 완료] 픽셀아트 에셋
+- public/assets/characters/: sungsungi-keyboard, sungsungi-envelope, mouse-cafe, dinosaur-heart
+- public/assets/decorations/: star, clover, binder-clip, masking-tape-green, gingham-tape
+- 모두 SVG 형식 (image-rendering: pixelated)
+- 실제 픽셀아트 이미지는 추후 디자이너 작업 or AI 생성으로 교체 예정
