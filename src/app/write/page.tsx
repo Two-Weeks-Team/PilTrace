@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { StarBackground } from '@/components/scrapbook'
-import { LaceRibbon } from '@/components/scrapbook'
 import { PaperNote } from '@/components/scrapbook'
 import { MaskingTape } from '@/components/scrapbook'
 
@@ -56,17 +55,16 @@ export default function WritePage() {
 
   return (
     <StarBackground>
-      <LaceRibbon position="top" />
       
-      <div className="min-h-screen flex flex-col items-center justify-center p-4 py-8">
-        <MaskingTape variant="green" rotation={-1} className="mb-4">
-          <span className="text-xs font-handwriting" style={{ color: 'var(--star-brown)' }}>
+      <div className="min-h-screen flex flex-col items-center justify-center p-4 py-12">
+        <MaskingTape variant="green" rotation={-1} className="mb-6">
+          <span className="text-sm font-handwriting tracking-wide" style={{ color: 'var(--star-brown)' }}>
             오늘의 일기
           </span>
         </MaskingTape>
 
-        <PaperNote variant="lined" clip className="w-full max-w-lg">
-          <div className="p-4">
+        <PaperNote variant="lined" clip className="w-full max-w-md">
+          <div className="p-6">
             <textarea
               value={content}
               onChange={(e) => setContent(e.target.value)}
@@ -95,7 +93,7 @@ export default function WritePage() {
         <button
           onClick={handleSubmit}
           disabled={!isValid || isLoading}
-          className="mt-6 px-8 py-3 rounded-full text-sm font-medium transition-opacity disabled:opacity-40"
+          className="mt-8 px-10 py-3.5 rounded-full text-base font-medium transition-all hover:scale-[1.02] disabled:opacity-40 shadow-sm"
           style={{
             backgroundColor: 'var(--cream)',
             color: 'var(--star-brown)',

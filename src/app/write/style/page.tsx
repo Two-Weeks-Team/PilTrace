@@ -58,68 +58,72 @@ export default function StylePage() {
 
   return (
     <StarBackground>
-      <div className="min-h-screen flex flex-col items-center justify-center p-4 py-8">
-        <MaskingTape variant="gingham" rotation={1} className="mb-6">
-          <span className="text-xs font-handwriting" style={{ color: 'var(--star-brown)' }}>
+      <div className="min-h-screen flex flex-col items-center justify-center p-4 py-12">
+        <MaskingTape variant="gingham" rotation={1} className="mb-8">
+          <span className="text-sm font-handwriting tracking-wide" style={{ color: 'var(--star-brown)' }}>
             어떤 에세이를 원하세요?
           </span>
         </MaskingTape>
 
         {/* Focus selection */}
-        <PaperNote variant="grid" className="w-full max-w-sm mb-4 p-4">
-          <h2 className="text-sm font-medium mb-3" style={{ color: 'var(--star-brown)' }}>
-            초점 선택
-          </h2>
-          <div className="grid grid-cols-2 gap-2">
-            {FOCUS_OPTIONS.map(opt => (
-              <button
-                key={opt.value}
-                onClick={() => setFocus(opt.value)}
-                className="p-3 rounded-lg text-left transition-all"
-                style={{
-                  backgroundColor: focus === opt.value ? 'var(--sage-green)' : 'transparent',
-                  border: `2px solid ${focus === opt.value ? 'var(--sage-green)' : 'var(--earthy-brown)'}`,
-                  color: focus === opt.value ? 'var(--cream)' : 'var(--earthy-brown)',
-                  opacity: focus === opt.value ? 1 : 0.6,
-                }}
-              >
-                <div className="font-medium text-sm">{opt.label}</div>
-                <div className="text-xs mt-1 opacity-80">{opt.desc}</div>
-              </button>
-            ))}
+        <PaperNote variant="lined" className="w-full max-w-md mb-6">
+          <div className="p-6">
+            <h2 className="text-base font-medium mb-4" style={{ color: 'var(--star-brown)' }}>
+              초점 선택
+            </h2>
+            <div className="grid grid-cols-2 gap-3">
+              {FOCUS_OPTIONS.map(opt => (
+                <button
+                  key={opt.value}
+                  onClick={() => setFocus(opt.value)}
+                  className="p-4 rounded-xl flex flex-col items-center justify-center text-center transition-all"
+                  style={{
+                    backgroundColor: focus === opt.value ? 'var(--sage-green)' : 'rgba(156,175,136,0.08)',
+                    border: `2px solid ${focus === opt.value ? 'var(--sage-green)' : 'rgba(107,76,59,0.15)'}`,
+                    color: focus === opt.value ? 'var(--cream)' : 'var(--earthy-brown)',
+                    transform: focus === opt.value ? 'scale(1.02)' : 'scale(1)',
+                  }}
+                >
+                  <div className="font-medium text-sm mb-1">{opt.label}</div>
+                  <div className="text-xs opacity-70">{opt.desc}</div>
+                </button>
+              ))}
+            </div>
           </div>
         </PaperNote>
 
         {/* Style selection */}
-        <PaperNote variant="grid" className="w-full max-w-sm mb-6 p-4">
-          <h2 className="text-sm font-medium mb-3" style={{ color: 'var(--star-brown)' }}>
-            필체 선택
-          </h2>
-          <div className="grid grid-cols-2 gap-2">
-            {STYLE_OPTIONS.map(opt => (
-              <button
-                key={opt.value}
-                onClick={() => setStyle(opt.value)}
-                className="p-3 rounded-lg text-left transition-all"
-                style={{
-                  backgroundColor: style === opt.value ? 'var(--sage-green)' : 'transparent',
-                  border: `2px solid ${style === opt.value ? 'var(--sage-green)' : 'var(--earthy-brown)'}`,
-                  color: style === opt.value ? 'var(--cream)' : 'var(--earthy-brown)',
-                  opacity: style === opt.value ? 1 : 0.6,
-                }}
-              >
-                <div className="text-lg mb-1">{opt.emoji}</div>
-                <div className="font-medium text-sm">{opt.label}</div>
-                <div className="text-xs mt-1 opacity-80">{opt.desc}</div>
-              </button>
-            ))}
+        <PaperNote variant="lined" className="w-full max-w-md mb-8">
+          <div className="p-6">
+            <h2 className="text-base font-medium mb-4" style={{ color: 'var(--star-brown)' }}>
+              필체 선택
+            </h2>
+            <div className="grid grid-cols-2 gap-3">
+              {STYLE_OPTIONS.map(opt => (
+                <button
+                  key={opt.value}
+                  onClick={() => setStyle(opt.value)}
+                  className="p-4 rounded-xl flex flex-col items-center justify-center text-center transition-all"
+                  style={{
+                    backgroundColor: style === opt.value ? 'var(--sage-green)' : 'rgba(156,175,136,0.08)',
+                    border: `2px solid ${style === opt.value ? 'var(--sage-green)' : 'rgba(107,76,59,0.15)'}`,
+                    color: style === opt.value ? 'var(--cream)' : 'var(--earthy-brown)',
+                    transform: style === opt.value ? 'scale(1.02)' : 'scale(1)',
+                  }}
+                >
+                  <div className="text-2xl mb-2">{opt.emoji}</div>
+                  <div className="font-medium text-sm">{opt.label}</div>
+                  <div className="text-xs mt-1 opacity-70">{opt.desc}</div>
+                </button>
+              ))}
+            </div>
           </div>
         </PaperNote>
 
         <button
           onClick={handleNext}
           disabled={isLoading}
-          className="px-8 py-3 rounded-full text-sm font-medium disabled:opacity-50"
+          className="px-10 py-3.5 rounded-full text-base font-medium disabled:opacity-50 transition-all hover:scale-[1.02] shadow-sm"
           style={{
             backgroundColor: 'var(--cream)',
             color: 'var(--star-brown)',
