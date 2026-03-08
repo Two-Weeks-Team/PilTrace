@@ -48,18 +48,22 @@ body {
 
 /* === 텍스처 클래스 === */
 
-/* 별 패턴 배경 (PDF Page 1, 2) */
+/* 별 패턴 배경 (PDF Page 1, 2) — uses pixel-art SVG asset */
 .bg-star-pattern {
   background-color: var(--sage-green);
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2l1.5 4.5H18l-3.7 2.7 1.4 4.3L12 11l-3.7 2.5 1.4-4.3L6 6.5h4.5z' fill='%234A3728' opacity='0.4'/%3E%3C/svg%3E");
+  background-image: url('/assets/backgrounds/star-pattern.svg');
   background-repeat: repeat;
+  background-size: 48px 48px;
+  image-rendering: pixelated;
 }
 
-/* 클로버 패턴 배경 (PDF Page 3) */
+/* 클로버 패턴 배경 (PDF Page 3) — uses pixel-art SVG asset */
 .bg-clover-pattern {
   background-color: #FAFAF8;
-  background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7' cy='7' r='3' fill='%235B8C5A' opacity='0.25'/%3E%3Ccircle cx='21' cy='7' r='3' fill='%235B8C5A' opacity='0.25'/%3E%3Ccircle cx='7' cy='21' r='3' fill='%235B8C5A' opacity='0.25'/%3E%3Ccircle cx='21' cy='21' r='3' fill='%235B8C5A' opacity='0.25'/%3E%3C/svg%3E");
+  background-image: url('/assets/backgrounds/clover-pattern.svg');
   background-repeat: repeat;
+  background-size: 48px 48px;
+  image-rendering: pixelated;
 }
 
 /* 줄노트 배경 */
@@ -131,4 +135,40 @@ body {
 /* === 모바일 safe area === */
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* === 모바일 반응형 최적화 === */
+
+/* 입력 필드 zoom 방지 (iOS) */
+@media (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+
+/* 터치 타겟 최소 크기 */
+button, a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 오버플로우 방지 */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* 모바일 텍스트 가독성 */
+@media (max-width: 375px) {
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* safe area 개선 */
+.safe-bottom {
+  padding-bottom: max(env(safe-area-inset-bottom), 16px);
 }

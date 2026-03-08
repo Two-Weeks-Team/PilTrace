@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" style="image-rendering:pixelated">
+  <!-- Off-white background with clover pattern -->
+  <!-- Base -->
+  <rect width="48" height="48" fill="#F5F0E8"/>
+  <!-- Clover row 1 (y=2) - small 3-leaf clovers -->
+  <!-- Clover 1 at (4,2) -->
+  <rect x="4" y="2" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="6" y="3" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="2" y="3" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="4" y="4" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="4" y="6" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover 2 at (20,2) -->
+  <rect x="20" y="2" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="22" y="3" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="18" y="3" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="20" y="4" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="20" y="6" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover 3 at (36,2) -->
+  <rect x="36" y="2" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="38" y="3" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="34" y="3" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="36" y="4" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="36" y="6" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover row 2 offset (y=14) -->
+  <!-- Clover 4 at (12,14) -->
+  <rect x="12" y="14" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="14" y="15" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="10" y="15" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="12" y="16" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="12" y="18" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover 5 at (28,14) -->
+  <rect x="28" y="14" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="30" y="15" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="26" y="15" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="28" y="16" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="28" y="18" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover 6 at (44,14) -->
+  <rect x="44" y="14" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="46" y="15" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="42" y="15" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="44" y="16" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="44" y="18" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover row 3 (y=26) -->
+  <!-- Clover 7 at (4,26) -->
+  <rect x="4" y="26" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="6" y="27" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="2" y="27" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="4" y="28" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="4" y="30" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover 8 at (20,26) -->
+  <rect x="20" y="26" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="22" y="27" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="18" y="27" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="20" y="28" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="20" y="30" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover 9 at (36,26) -->
+  <rect x="36" y="26" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="38" y="27" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="34" y="27" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="36" y="28" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="36" y="30" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover row 4 offset (y=38) -->
+  <!-- Clover 10 at (12,38) -->
+  <rect x="12" y="38" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="14" y="39" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="10" y="39" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="12" y="40" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="12" y="42" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover 11 at (28,38) -->
+  <rect x="28" y="38" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="30" y="39" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="26" y="39" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="28" y="40" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="28" y="42" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Clover 12 at (44,38) -->
+  <rect x="44" y="38" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="46" y="39" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="42" y="39" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="44" y="40" width="2" height="2" fill="#9CAF88" opacity="0.5"/>
+  <rect x="44" y="42" width="1" height="2" fill="#7C906C" opacity="0.4"/>
+  <!-- Tiny dot texture (paper grain) -->
+  <rect x="8" y="10" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+  <rect x="24" y="8" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+  <rect x="40" y="11" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+  <rect x="16" y="22" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+  <rect x="32" y="22" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+  <rect x="8" y="34" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+  <rect x="24" y="34" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+  <rect x="40" y="35" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+  <rect x="16" y="46" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+  <rect x="32" y="46" width="1" height="1" fill="#E8E0D8" opacity="0.4"/>
+</svg>

@@ -30,10 +30,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files — NEVER commit (except .env.example)
+.env
 .env.local
 .env.test
 .env*.local
+!.env.example
 
 # vercel
 .vercel
@@ -41,3 +43,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# internal planning
+.sisyphus/

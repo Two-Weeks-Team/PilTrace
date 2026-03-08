@@ -1,6 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 16" width="60" height="16" style="image-rendering:pixelated">
-  <rect width="60" height="16" fill="rgba(156,175,136,0.7)" rx="2"/>
-  <line x1="0" y1="4" x2="60" y2="4" stroke="rgba(124,144,108,0.4)" stroke-width="1"/>
-  <line x1="0" y1="8" x2="60" y2="8" stroke="rgba(124,144,108,0.4)" stroke-width="1"/>
-  <line x1="0" y1="12" x2="60" y2="12" stroke="rgba(124,144,108,0.4)" stroke-width="1"/>
+  <!-- Green washi tape with torn edges - pixel art -->
+  <!-- Torn left edge -->
+  <rect x="0" y="2" width="2" height="12" fill="#9CAF88" opacity="0.8"/>
+  <rect x="1" y="1" width="1" height="1" fill="#9CAF88" opacity="0.5"/>
+  <rect x="2" y="3" width="1" height="2" fill="#9CAF88" opacity="0.9"/>
+  <rect x="0" y="4" width="1" height="3" fill="#9CAF88" opacity="0.4"/>
+  <rect x="1" y="13" width="2" height="1" fill="#9CAF88" opacity="0.6"/>
+  <rect x="0" y="10" width="1" height="2" fill="#9CAF88" opacity="0.3"/>
+  <!-- Main tape body -->
+  <rect x="3" y="1" width="54" height="14" fill="#9CAF88" opacity="0.85"/>
+  <!-- Torn right edge -->
+  <rect x="57" y="2" width="2" height="12" fill="#9CAF88" opacity="0.8"/>
+  <rect x="59" y="4" width="1" height="3" fill="#9CAF88" opacity="0.5"/>
+  <rect x="58" y="1" width="1" height="2" fill="#9CAF88" opacity="0.6"/>
+  <rect x="59" y="10" width="1" height="3" fill="#9CAF88" opacity="0.4"/>
+  <rect x="57" y="14" width="2" height="1" fill="#9CAF88" opacity="0.3"/>
+  <!-- Horizontal fiber lines -->
+  <rect x="3" y="4" width="54" height="1" fill="#7C906C" opacity="0.25"/>
+  <rect x="3" y="8" width="54" height="1" fill="#7C906C" opacity="0.2"/>
+  <rect x="3" y="12" width="54" height="1" fill="#7C906C" opacity="0.25"/>
+  <!-- Subtle diagonal fiber texture -->
+  <rect x="8" y="2" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <rect x="9" y="3" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <rect x="18" y="5" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <rect x="19" y="6" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <rect x="30" y="3" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <rect x="31" y="4" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <rect x="42" y="6" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <rect x="43" y="7" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <rect x="52" y="2" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <rect x="53" y="3" width="1" height="1" fill="#B0C898" opacity="0.3"/>
+  <!-- Top edge irregularity (torn look) -->
+  <rect x="6" y="0" width="2" height="1" fill="#9CAF88" opacity="0.4"/>
+  <rect x="15" y="0" width="3" height="1" fill="#9CAF88" opacity="0.5"/>
+  <rect x="28" y="0" width="2" height="1" fill="#9CAF88" opacity="0.3"/>
+  <rect x="40" y="0" width="3" height="1" fill="#9CAF88" opacity="0.5"/>
+  <rect x="50" y="0" width="2" height="1" fill="#9CAF88" opacity="0.4"/>
+  <!-- Bottom edge irregularity (torn look) -->
+  <rect x="10" y="15" width="3" height="1" fill="#9CAF88" opacity="0.5"/>
+  <rect x="22" y="15" width="2" height="1" fill="#9CAF88" opacity="0.3"/>
+  <rect x="35" y="15" width="3" height="1" fill="#9CAF88" opacity="0.4"/>
+  <rect x="48" y="15" width="2" height="1" fill="#9CAF88" opacity="0.5"/>
 </svg>

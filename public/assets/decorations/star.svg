@@ -1,3 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="image-rendering:pixelated">
-  <polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" fill="#4A3728"/>
+  <!-- Fabric star with white stitch lines - dark brown felt -->
+  <!-- Star body -->
+  <rect x="10" y="1" width="4" height="2" fill="#6B4C2A"/>
+  <rect x="9" y="3" width="6" height="2" fill="#6B4C2A"/>
+  <rect x="8" y="5" width="8" height="2" fill="#6B4C2A"/>
+  <rect x="1" y="7" width="22" height="2" fill="#6B4C2A"/>
+  <rect x="2" y="9" width="20" height="2" fill="#6B4C2A"/>
+  <rect x="4" y="11" width="16" height="2" fill="#6B4C2A"/>
+  <rect x="5" y="13" width="14" height="2" fill="#6B4C2A"/>
+  <rect x="4" y="15" width="16" height="2" fill="#6B4C2A"/>
+  <rect x="3" y="17" width="7" height="2" fill="#6B4C2A"/>
+  <rect x="14" y="17" width="7" height="2" fill="#6B4C2A"/>
+  <rect x="2" y="19" width="6" height="2" fill="#6B4C2A"/>
+  <rect x="16" y="19" width="6" height="2" fill="#6B4C2A"/>
+  <rect x="1" y="21" width="5" height="2" fill="#6B4C2A"/>
+  <rect x="18" y="21" width="5" height="2" fill="#6B4C2A"/>
+  <!-- Highlight (lighter brown center) -->
+  <rect x="10" y="5" width="4" height="1" fill="#8B6914"/>
+  <rect x="6" y="8" width="12" height="1" fill="#8B6914"/>
+  <rect x="7" y="12" width="10" height="1" fill="#8B6914"/>
+  <!-- White stitch lines (dashed effect) -->
+  <rect x="11" y="3" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="11" y="5" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="5" y="8" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="8" y="8" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="11" y="8" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="14" y="8" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="17" y="8" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="7" y="10" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="10" y="10" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="13" y="10" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="16" y="10" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="8" y="12" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="11" y="12" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="14" y="12" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="6" y="14" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="9" y="14" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="14" y="14" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="17" y="14" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="5" y="16" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="18" y="16" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="4" y="18" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="7" y="18" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="16" y="18" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="19" y="18" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="3" y="20" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="5" y="20" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="18" y="20" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="20" y="20" width="1" height="1" fill="#FFFFFF" opacity="0.8"/>
 </svg>

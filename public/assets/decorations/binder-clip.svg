@@ -1,5 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 32" width="20" height="32" style="image-rendering:pixelated">
-  <rect x="6" y="8" width="8" height="20" fill="#C8A96E" rx="1"/>
-  <rect x="4" y="6" width="12" height="4" fill="#A0834E"/>
-  <rect x="8" y="0" width="4" height="10" fill="#A0834E" rx="2"/>
+  <!-- Gold metal binder clip - pixel art -->
+  <!-- Wire handles (top part) -->
+  <rect x="4" y="0" width="2" height="2" fill="#C8A040"/>
+  <rect x="14" y="0" width="2" height="2" fill="#C8A040"/>
+  <rect x="3" y="2" width="2" height="3" fill="#C8A040"/>
+  <rect x="15" y="2" width="2" height="3" fill="#C8A040"/>
+  <rect x="4" y="5" width="2" height="2" fill="#C8A040"/>
+  <rect x="14" y="5" width="2" height="2" fill="#C8A040"/>
+  <rect x="5" y="7" width="2" height="2" fill="#C8A040"/>
+  <rect x="13" y="7" width="2" height="2" fill="#C8A040"/>
+  <rect x="6" y="9" width="2" height="1" fill="#C8A040"/>
+  <rect x="12" y="9" width="2" height="1" fill="#C8A040"/>
+  <!-- Handle highlights -->
+  <rect x="4" y="0" width="1" height="1" fill="#E8D080" opacity="0.7"/>
+  <rect x="14" y="0" width="1" height="1" fill="#E8D080" opacity="0.7"/>
+  <rect x="3" y="2" width="1" height="1" fill="#E8D080" opacity="0.7"/>
+  <rect x="15" y="2" width="1" height="1" fill="#E8D080" opacity="0.7"/>
+  <!-- Clip body (main gold rectangle) -->
+  <rect x="2" y="10" width="16" height="4" fill="#D8A840" rx="1"/>
+  <!-- Body top edge (shine) -->
+  <rect x="3" y="10" width="14" height="1" fill="#E8D080"/>
+  <!-- Body shadow line -->
+  <rect x="3" y="13" width="14" height="1" fill="#A08030"/>
+  <!-- Body texture lines -->
+  <rect x="5" y="11" width="1" height="2" fill="#C89830" opacity="0.5"/>
+  <rect x="10" y="11" width="1" height="2" fill="#C89830" opacity="0.5"/>
+  <rect x="14" y="11" width="1" height="2" fill="#C89830" opacity="0.5"/>
+  <!-- Lower clip jaw -->
+  <rect x="3" y="14" width="14" height="10" fill="#D8A840"/>
+  <!-- Jaw left edge highlight -->
+  <rect x="3" y="14" width="1" height="10" fill="#E8D080" opacity="0.5"/>
+  <!-- Jaw right edge shadow -->
+  <rect x="16" y="14" width="1" height="10" fill="#A08030" opacity="0.5"/>
+  <!-- Jaw interior lines (grip ridges) -->
+  <rect x="4" y="16" width="12" height="1" fill="#C89830" opacity="0.3"/>
+  <rect x="4" y="19" width="12" height="1" fill="#C89830" opacity="0.3"/>
+  <rect x="4" y="22" width="12" height="1" fill="#C89830" opacity="0.3"/>
+  <!-- Bottom edge -->
+  <rect x="4" y="24" width="12" height="1" fill="#A08030"/>
+  <!-- Pivot/hinge dot -->
+  <rect x="9" y="11" width="2" height="2" fill="#A08030"/>
+  <rect x="9" y="11" width="1" height="1" fill="#E8D080"/>
 </svg>
