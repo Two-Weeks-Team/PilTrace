@@ -8,7 +8,7 @@ import { createServerClient } from '@supabase/ssr'
  */
 
 // 인증 필요한 라우트 접두사
-const protectedPrefixes = ['/diary', '/essay', '/mypage', '/settings']
+const protectedPrefixes = ['/write', '/diary', '/essay', '/drawer', '/mypage', '/settings']
 
 // 인증된 사용자가 접근 불필요한 라우트
 const authRoutes = ['/login', '/signup']

@@ -23,9 +23,6 @@ export default function SignupPage() {
     }
     setError(null)
     setIsLoading(true)
-    e.preventDefault()
-    setError(null)
-    setIsLoading(true)
 
     try {
       const supabase = createClient()
@@ -40,7 +37,18 @@ export default function SignupPage() {
       })
 
       if (signUpError) {
-        setError(signUpError.message)
+        // Supabase rate limit 에러 한국어 처리
+        if (signUpError.message.includes('rate limit') || signUpError.status === 429) {
+          setError('잠시 후 다시 시도해주세요. 이메일 인증 발송 횟수가 초과되었어요.')
+        } else if (signUpError.message.includes('already registered') || signUpError.message.includes('already been registered')) {
+          setError('이미 가입된 이메일이에요. 로그인해주세요.')
+        } else if (signUpError.message.includes('valid email')) {
+          setError('올바른 이메일 주소를 입력해주세요.')
+        } else if (signUpError.message.includes('at least')) {
+          setError('비밀번호는 6자 이상이어야 해요.')
+        } else {
+          setError(signUpError.message)
+        }
         return
       }
 
