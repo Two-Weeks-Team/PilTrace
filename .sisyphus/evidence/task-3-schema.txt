@@ -1,0 +1,91 @@
+TASK 3: Supabase Database Schema with Drizzle ORM
+==================================================
+
+COMPLETION EVIDENCE
+-------------------
+
+1. TypeScript Type Check: PASSED ✓
+   Command: npx tsc --noEmit
+   Result: No errors (clean output)
+
+2. Files Created:
+   ✓ src/db/schema.ts (76 lines)
+     - 4 tables: users, diaries, essays, survey_responses
+     - 2 enums: essay_focus, writing_style
+     - Type exports for all tables
+   
+   ✓ src/db/index.ts (24 lines)
+     - DB connection helper with DATABASE_URL safety
+     - Null return when DATABASE_URL not set (build-time safe)
+     - SSL configuration for production
+     - Max 10 connections pool
+
+3. Migration Files Generated:
+   ✓ drizzle/0000_colorful_nightmare.sql (52 lines)
+     - CREATE TYPE statements for enums
+     - CREATE TABLE statements for all 4 tables
+     - Foreign key constraints with proper ON DELETE rules
+     - Indexes on user_id and unique_code
+     - UNIQUE constraints on email and unique_code
+
+4. Schema Details:
+   
+   users table:
+   - id (uuid, PRIMARY KEY)
+   - email (text, UNIQUE, NOT NULL)
+   - nickname (text, nullable)
+   - consentedAt (timestamp, nullable)
+   - createdAt (timestamp, DEFAULT now())
+   - updatedAt (timestamp, DEFAULT now())
+   
+   diaries table:
+   - id (uuid, PRIMARY KEY, DEFAULT gen_random_uuid())
+   - userId (uuid, FK → users.id, ON DELETE cascade, nullable)
+   - content (text, NOT NULL)
+   - createdAt (timestamp, DEFAULT now())
+   - Index: diaries_user_id_idx
+   
+   essays table:
+   - id (uuid, PRIMARY KEY, DEFAULT gen_random_uuid())
+   - diaryId (uuid, FK → diaries.id, ON DELETE cascade, NOT NULL)
+   - userId (uuid, FK → users.id, ON DELETE set null, nullable)
+   - uniqueCode (varchar(6), UNIQUE, nullable)
+   - pinHash (text, nullable)
+   - content (text, NOT NULL)
+   - focus (essay_focus enum, NOT NULL)
+   - style (writing_style enum, NOT NULL)
+   - todaysWord (text, nullable)
+   - surveyData (jsonb, nullable)
+   - revisionCount (integer, DEFAULT 0)
+   - agentMetadata (jsonb, nullable)
+   - createdAt (timestamp, DEFAULT now())
+   - updatedAt (timestamp, DEFAULT now())
+   - Indexes: essays_user_id_idx, essays_unique_code_idx
+   
+   survey_responses table:
+   - id (uuid, PRIMARY KEY, DEFAULT gen_random_uuid())
+   - essayId (uuid, FK → essays.id, ON DELETE cascade, NOT NULL)
+   - questions (jsonb, NOT NULL)
+   - answers (jsonb, NOT NULL)
+   - createdAt (timestamp, DEFAULT now())
+
+5. Dependencies Installed:
+   ✓ postgres (driver for Drizzle ORM)
+   ✓ drizzle-orm (already present)
+   ✓ drizzle-kit (already present)
+
+6. Configuration:
+   ✓ drizzle.config.ts already configured:
+     - schema: './src/db/schema.ts'
+     - out: './drizzle'
+     - dialect: 'postgresql'
+     - schemaFilter: ['public']
+
+NOTES
+-----
+- Migration file generated successfully with DATABASE_URL=placeholder
+- No actual database connection attempted (safe for build-time)
+- All foreign key relationships properly configured
+- Cascade delete for diary→essays, essay→survey_responses
+- Set null for user references (allows guest essays)
+- Ready for Supabase deployment when DATABASE_URL is provided

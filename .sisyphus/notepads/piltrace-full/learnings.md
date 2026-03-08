@@ -36,3 +36,12 @@
   - React Compiler는 `experimental.reactCompiler` 아님, 최상위 `reactCompiler` 옵션 사용
   - babel-plugin-react-compiler 필수 설치
   - 빌드 성공 (exit code 0)
+
+## [T2 완료] 환경변수
+- zod 버전: 3.24.1 (이미 설치됨)
+- src/lib/env.ts: Zod 기반 환경변수 검증, OPENAI_API_KEY 필수
+- Supabase 키들은 아직 없음 (optional로 처리)
+- .env.example: Phase 1 필수 키 + 발급 URL 주석 포함
+- .env.test: 테스트용 빈 템플릿
+- TypeScript 검증: ✓ 통과 (npx tsc --noEmit)
+- 주의: Zod error.issues 사용 (error.errors 아님)
