@@ -25,3 +25,14 @@
 - All agents use GPT-5-mini ONLY. Never Claude, Gemini, Azure.
 - NO Kakao OAuth, NO Toss Payments in Phase 1
 - `.env` file must NOT be modified directly — only `.env.example` and `.env.local`
+
+## [T1 완료] 스캐폴딩
+- Next.js 버전: 16.1.6
+- Tailwind 버전: 4.2.1
+- 패키지 매니저: bun (v1.3.10)
+- React Compiler: 활성화 (babel-plugin-react-compiler 설치 필요)
+- 특이사항: 
+  - `bunx create-next-app`은 대문자 디렉토리명 불가 → 임시 디렉토리에서 생성 후 이동
+  - React Compiler는 `experimental.reactCompiler` 아님, 최상위 `reactCompiler` 옵션 사용
+  - babel-plugin-react-compiler 필수 설치
+  - 빌드 성공 (exit code 0)

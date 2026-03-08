@@ -1,0 +1,23 @@
+TypeScript Type Checking Results
+==================================
+
+Command: npx tsc --noEmit
+Status: PASSED ✓
+
+No TypeScript errors found.
+
+Files checked:
+- src/lib/env.ts: Zod schema validation utility
+- All type definitions are correct
+
+Environment Variables Schema:
+- OPENAI_API_KEY: required string
+- NEXT_PUBLIC_SUPABASE_URL: optional URL
+- NEXT_PUBLIC_SUPABASE_ANON_KEY: optional string
+- SUPABASE_SERVICE_ROLE_KEY: optional string
+- DATABASE_URL: optional string
+- DIRECT_URL: optional string
+- NEXT_PUBLIC_APP_URL: optional URL (default: http://localhost:3000)
+- NODE_ENV: enum (development|test|production, default: development)
+
+Validation: ✓ Complete

@@ -293,7 +293,7 @@ Max Concurrent: 7 (Wave 1)
 
 ### Wave 1: Foundation (T1~T7)
 
-- [ ] 1. **프로젝트 스캐폴딩 + Next.js 16 설정**
+- [x] 1. **프로젝트 스캐폴딩 + Next.js 16 설정**
 
   **What to do**:
   - `bunx create-next-app@latest piltrace --typescript --app --tailwind --src-dir`
