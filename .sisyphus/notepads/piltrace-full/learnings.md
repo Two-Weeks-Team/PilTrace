@@ -45,3 +45,15 @@
 - .env.test: 테스트용 빈 템플릿
 - TypeScript 검증: ✓ 통과 (npx tsc --noEmit)
 - 주의: Zod error.issues 사용 (error.errors 아님)
+
+## [T3 완료] DB 스키마
+- postgres 드라이버: 3.4.4
+- 스키마: users, diaries, essays, survey_responses (4개 테이블)
+- 마이그레이션: drizzle/0000_colorful_nightmare.sql 생성 완료
+- DB 커넥션: DATABASE_URL 없으면 null 반환 (빌드 타임 안전)
+- 특이사항:
+  - npm install postgres (bun 대신 npm 사용)
+  - DATABASE_URL=placeholder로 migration 생성 (실제 DB 연결 없음)
+  - TypeScript 검증: ✓ 통과 (npx tsc --noEmit)
+  - Foreign key: cascade delete (diary→essays, essay→survey_responses), set null (user references)
+  - Indexes: diaries_user_id_idx, essays_user_id_idx, essays_unique_code_idx
