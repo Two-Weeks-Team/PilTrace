@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { StarBackground } from '@/components/scrapbook'
@@ -23,6 +23,14 @@ export default function GeneratingPage() {
   const router = useRouter()
   const { state, startPhase1, submitSurvey } = usePipeline()
   const [started, setStarted] = useState(false)
+  const textRef = useRef<HTMLDivElement>(null)
+
+  // Auto-scroll to bottom as text streams in
+  useEffect(() => {
+    if (textRef.current && state.isStreaming) {
+      textRef.current.scrollTop = textRef.current.scrollHeight
+    }
+  }, [state.draft, state.finalEssay, state.isStreaming])
 
   useEffect(() => {
     if (started) return
@@ -38,10 +46,8 @@ export default function GeneratingPage() {
     async function run() {
       try {
         if (surveyAnswers.length > 0) {
-          // Survey already done, go straight to phase 2+
           await submitSurvey(input, surveyAnswers)
         } else {
-          // Start from phase 1
           await startPhase1(input)
         }
       } catch (err) {
@@ -55,44 +61,84 @@ export default function GeneratingPage() {
   useEffect(() => {
     if (state.phase === 'complete' && state.finalEssay) {
       sessionStorage.setItem('piltrace_final_essay', state.finalEssay)
-      router.push('/essay/result')
+      // Small delay so user can see the completed text
+      const timer = setTimeout(() => router.push('/essay/result'), 2000)
+      return () => clearTimeout(timer)
     }
   }, [state.phase, state.finalEssay, router])
 
+  const streamingText = state.finalEssay || state.draft
+  const isShowingText = state.isStreaming || state.phase === 'phase3' || state.phase === 'phase5' || state.phase === 'complete'
+
   return (
     <StarBackground>
-      <div className="min-h-screen flex flex-col items-center justify-center p-4">
-        <PaperNote variant="lined" clip className="w-full max-w-md p-8 text-center">
-          {/* Animated sungsungi character */}
-          <div className="mb-4 flex justify-center">
-            <Image
-              src="/assets/characters/sungsungi-keyboard.svg"
-              alt="숭숭이가 에세이를 쓰고 있어요"
-              width={64}
-              height={64}
-              className="pixel-art animate-bounce"
-              style={{ imageRendering: 'pixelated' }}
-            />
-          </div>
-          
-          <h2 className="text-xl font-handwriting mb-2" style={{ color: 'var(--star-brown)' }}>
+      <div className="min-h-screen flex flex-col items-center p-4 py-8">
+        {/* Header: character + phase message */}
+        <div className="flex items-center gap-3 mb-6 mt-4">
+          <Image
+            src="/assets/characters/sungsungi-keyboard.svg"
+            alt="승승이가 에세이를 쓰고 있어요"
+            width={48}
+            height={48}
+            className="pixel-art animate-bounce"
+            style={{ imageRendering: 'pixelated' }}
+          />
+          <h2 className="text-xl font-handwriting" style={{ color: 'var(--cream)' }}>
             {PHASE_MESSAGES[state.phase]}
           </h2>
+        </div>
 
-          {/* Streaming preview */}
-          {state.isStreaming && (state.draft || state.finalEssay) && (
+        {/* Streaming text card — full readable area */}
+        {isShowingText && streamingText ? (
+          <PaperNote variant="lined" className="w-full max-w-lg flex-1">
             <div
-              className="mt-4 text-left text-xs leading-relaxed max-h-32 overflow-hidden"
-              style={{ color: 'var(--earthy-brown)', opacity: 0.7 }}
+              ref={textRef}
+              className="p-6 overflow-y-auto"
+              style={{
+                maxHeight: 'calc(100vh - 200px)',
+                minHeight: '300px',
+                color: 'var(--earthy-brown)',
+                lineHeight: '1.9',
+                fontSize: '15px',
+              }}
             >
-              {(state.finalEssay || state.draft).slice(-200)}
+              {streamingText}
+              {state.isStreaming && (
+                <span className="inline-block w-0.5 h-4 ml-0.5 animate-pulse" style={{ backgroundColor: 'var(--sage-green)' }} />
+              )}
             </div>
-          )}
+          </PaperNote>
+        ) : (
+          /* Non-streaming phases: compact card */
+          <PaperNote variant="lined" clip className="w-full max-w-md">
+            <div className="p-8 text-center">
+              <div className="mb-4 flex justify-center">
+                <Image
+                  src="/assets/characters/sungsungi-keyboard.svg"
+                  alt="승승이"
+                  width={96}
+                  height={96}
+                  className="pixel-art animate-bounce"
+                  style={{ imageRendering: 'pixelated' }}
+                />
+              </div>
+              <h2 className="text-2xl font-handwriting mb-3" style={{ color: 'var(--star-brown)' }}>
+                {PHASE_MESSAGES[state.phase]}
+              </h2>
+              <div className="flex justify-center gap-1 mt-4">
+                <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: 'var(--sage-green)', animationDelay: '0s' }} />
+                <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: 'var(--sage-green)', animationDelay: '0.15s' }} />
+                <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: 'var(--sage-green)', animationDelay: '0.3s' }} />
+              </div>
+            </div>
+          </PaperNote>
+        )}
 
-          {state.phase === 'error' && (
-            <p className="mt-4 text-sm text-red-500">{state.error}</p>
-          )}
-        </PaperNote>
+        {state.phase === 'error' && (
+          <div className="mt-4 p-4 rounded-lg" style={{ backgroundColor: 'rgba(239,68,68,0.1)' }}>
+            <p className="text-sm text-red-500">{state.error}</p>
+          </div>
+        )}
       </div>
     </StarBackground>
   )
