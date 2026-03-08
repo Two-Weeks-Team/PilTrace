@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { StarBackground } from '@/components/scrapbook'
 import { PaperNote } from '@/components/scrapbook'
 import { usePipeline } from '@/lib/pipeline/usePipeline'
+import { createClient } from '@/lib/supabase/client'
 
 const PHASE_MESSAGES = {
   idle: '준비 중...',
@@ -61,8 +62,43 @@ export default function GeneratingPage() {
   useEffect(() => {
     if (state.phase === 'complete' && state.finalEssay) {
       sessionStorage.setItem('piltrace_final_essay', state.finalEssay)
-      // Small delay so user can see the completed text
-      const timer = setTimeout(() => router.push('/essay/result'), 2000)
+
+      // Save essay to DB
+      const saveEssay = async () => {
+        try {
+          const supabase = createClient()
+          const { data: { user } } = await supabase.auth.getUser()
+          const diaryId = sessionStorage.getItem('piltrace_diary_id')
+          const focus = sessionStorage.getItem('piltrace_focus') || 'experience'
+          const style = sessionStorage.getItem('piltrace_style') || 'story'
+
+          if (diaryId && diaryId !== 'undefined') {
+            const res = await fetch('/api/essay', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                diaryId,
+                content: state.finalEssay,
+                focus,
+                style,
+                userId: user?.id ?? null,
+              }),
+            })
+
+            if (res.ok) {
+              const result = await res.json()
+              sessionStorage.setItem('piltrace_essay_id', result.data.id)
+            }
+          }
+        } catch (err) {
+          console.error('Essay save failed:', err)
+        }
+
+        // Redirect regardless of save success
+        router.push('/essay/result')
+      }
+
+      const timer = setTimeout(saveEssay, 2000)
       return () => clearTimeout(timer)
     }
   }, [state.phase, state.finalEssay, router])

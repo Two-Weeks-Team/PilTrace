@@ -42,8 +42,8 @@ export default function WritePage() {
       })
       
       if (response.ok) {
-        const diary = await response.json()
-        sessionStorage.setItem('piltrace_diary_id', diary.id)
+        const result = await response.json()
+        sessionStorage.setItem('piltrace_diary_id', result.data.id)
       }
       
       router.push('/write/style')

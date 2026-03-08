@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { CloverBackground } from '@/components/scrapbook'
 import { PaperNote } from '@/components/scrapbook'
 import { MaskingTape } from '@/components/scrapbook'
-import { LaceRibbon } from '@/components/scrapbook'
+// LaceRibbon removed
 
 export default function EssayResultPage() {
   const router = useRouter()
@@ -53,7 +53,7 @@ export default function EssayResultPage() {
       await fetch(`/api/essay/${essayId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ todays_word: todaysWord }),
+        body: JSON.stringify({ todaysWord }),
       })
     } catch {
       // Silently fail — word is optional
@@ -75,7 +75,7 @@ export default function EssayResultPage() {
 
   return (
     <CloverBackground>
-      <LaceRibbon position="top" />
+      {/* top decoration removed */}
 
       <div className="min-h-screen p-4 py-12">
         {/* Envelope animation */}
@@ -283,7 +283,7 @@ export default function EssayResultPage() {
         )}
       </div>
 
-      <LaceRibbon position="bottom" />
+      {/* bottom decoration removed */}
 
       <style jsx>{`
         @keyframes slideUpLetter {

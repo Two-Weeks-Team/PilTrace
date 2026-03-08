@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation'
 import { CloverBackground } from '@/components/scrapbook'
 import { PaperNote } from '@/components/scrapbook'
 import { MaskingTape } from '@/components/scrapbook'
-import { LaceRibbon } from '@/components/scrapbook'
+import { ShareButton } from '@/components/scrapbook/ShareButton'
+// LaceRibbon removed
 
 const STYLE_LABELS: Record<string, string> = {
   story: '스토리형',
@@ -36,12 +37,12 @@ async function getEssay(id: string): Promise<Essay | null> {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
     const res = await fetch(`${baseUrl}/api/essay/${id}`, { cache: 'no-store' })
     if (!res.ok) return null
-    return res.json()
+    const json = await res.json()
+    return json.data
   } catch {
     return null
   }
 }
-
 export default async function EssayPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const essay = await getEssay(id)
@@ -60,7 +61,7 @@ export default async function EssayPage({ params }: { params: Promise<{ id: stri
 
   return (
     <CloverBackground>
-      <LaceRibbon position="top" />
+      {/* top decoration removed */}
 
       <div className="min-h-screen p-4 py-12">
         {/* Header */}
@@ -147,6 +148,8 @@ export default async function EssayPage({ params }: { params: Promise<{ id: stri
 
         {/* Action buttons */}
         <div className="max-w-lg mx-auto flex flex-col gap-3">
+          <ShareButton essayId={essay.id} existingCode={essay.unique_code} />
+
           <Link
             href={`/essay/${essay.id}/edit`}
             className="w-full py-3 rounded-full text-center text-sm font-medium border"
@@ -180,7 +183,7 @@ export default async function EssayPage({ params }: { params: Promise<{ id: stri
         </div>
       </div>
 
-      <LaceRibbon position="bottom" />
+      {/* bottom decoration removed */}
     </CloverBackground>
   )
 }

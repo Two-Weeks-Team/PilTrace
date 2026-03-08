@@ -33,7 +33,7 @@ export default function EditPage() {
       await fetch(`/api/essay/${essayId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ revision_count: 1 }),
+        body: JSON.stringify({ revisionCount: 1 }),
       })
       
       // Store revision context for pipeline

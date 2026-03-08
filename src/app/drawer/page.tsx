@@ -19,11 +19,12 @@ export default async function DrawerPage() {
   
   try {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
-    const response = await fetch(`${baseUrl}/api/essay?user_id=${user.id}`, {
+    const response = await fetch(`${baseUrl}/api/essay?userId=${user.id}`, {
       cache: 'no-store',
     })
     if (response.ok) {
-      essays = await response.json()
+      const json = await response.json()
+      essays = json.data || []
     }
   } catch {
     // DB not connected yet — show empty state
@@ -48,12 +49,12 @@ export default async function DrawerPage() {
         <div className="max-w-lg mx-auto space-y-4">
           {essays.length === 0 ? (
             <PaperNote variant="lined" className="p-6 text-center">
-              <p className="text-sm" style={{ color: 'var(--earthy-brown)', opacity: 0.6 }}>
               <div className="mb-3 flex justify-center">
                 <Image src="/assets/characters/mouse-cafe.svg" alt="마우스" width={48} height={48} className="pixel-art" style={{ imageRendering: 'pixelated' }} />
               </div>
+              <div className="text-sm" style={{ color: 'var(--earthy-brown)', opacity: 0.6 }}>
                 아직 저장된 에세이가 없어요.
-              </p>
+              </div>
               <Link
                 href="/write"
                 className="inline-block mt-4 px-6 py-2 rounded-full text-sm"

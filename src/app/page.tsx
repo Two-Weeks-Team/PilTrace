@@ -3,8 +3,10 @@ import Image from 'next/image'
 import { StarBackground } from '@/components/scrapbook'
 import { MaskingTape } from '@/components/scrapbook'
 import { PaperNote } from '@/components/scrapbook'
+import { getServerUser } from '@/lib/auth-guard'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const user = await getServerUser()
   return (
     <StarBackground>
       
@@ -47,20 +49,49 @@ export default function HomePage() {
               승승이가 감성 에세이로 만들어드릴게요 ✨
             </p>
 
-            <Link
-              href="/write"
-              className="inline-block px-10 py-3.5 rounded-full text-base font-medium transition-all hover:opacity-85 hover:scale-[1.02] shadow-sm"
-              style={{
-                backgroundColor: 'var(--sage-green)',
-                color: 'var(--cream)',
-              }}
-            >
-              일기 쓰기 시작하기
-            </Link>
+            {user ? (
+              /* 로그인 상태: 서랍/새 에세이 */
+              <div className="flex flex-col gap-3 w-full">
+                <Link
+                  href="/write"
+                  className="inline-block px-10 py-3.5 rounded-full text-base font-medium transition-all hover:opacity-85 hover:scale-[1.02] shadow-sm text-center"
+                  style={{
+                    backgroundColor: 'var(--sage-green)',
+                    color: 'var(--cream)',
+                  }}
+                >
+                  새 에세이 쓰기
+                </Link>
+                <Link
+                  href="/drawer"
+                  className="inline-block px-10 py-3 rounded-full text-sm font-medium transition-all hover:opacity-85 text-center border"
+                  style={{
+                    borderColor: 'var(--sage-green)',
+                    color: 'var(--sage-green)',
+                    backgroundColor: 'transparent',
+                  }}
+                >
+                  내 서랍 보기
+                </Link>
+              </div>
+            ) : (
+              /* 비로그인 상태: 시작하기 */
+              <Link
+                href="/write"
+                className="inline-block px-10 py-3.5 rounded-full text-base font-medium transition-all hover:opacity-85 hover:scale-[1.02] shadow-sm"
+                style={{
+                  backgroundColor: 'var(--sage-green)',
+                  color: 'var(--cream)',
+                }}
+              >
+                일기 쓰기 시작하기
+              </Link>
+            )}
+
           </div>
         </PaperNote>
 
-        {/* Guest access link */}
+        {/* Bottom links */}
         <div className="mt-8 text-center">
           <Link
             href="/access"
@@ -69,14 +100,18 @@ export default function HomePage() {
           >
             고유번호로 에세이 찾기
           </Link>
-          <span className="mx-3 text-sm" style={{ color: '#F5F0E8', opacity: 0.5 }}>|</span>
-          <Link
-            href="/login"
-            className="text-sm underline underline-offset-2 transition-opacity hover:opacity-100"
-            style={{ color: '#F5F0E8', opacity: 0.85 }}
-          >
-            로그인
-          </Link>
+          {!user && (
+            <>
+              <span className="mx-3 text-sm" style={{ color: '#F5F0E8', opacity: 0.5 }}>|</span>
+              <Link
+                href="/login"
+                className="text-sm underline underline-offset-2 transition-opacity hover:opacity-100"
+                style={{ color: '#F5F0E8', opacity: 0.85 }}
+              >
+                로그인
+              </Link>
+            </>
+          )}
         </div>
       </div>
 
