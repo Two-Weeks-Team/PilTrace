@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
+/* === PilTrace 색상 토큰 === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* 메인 팔레트 */
+  --sage-green: #9CAF88;
+  --sage-green-dark: #7A9068;
+  --cream: #F5F0E8;
+  --cream-dark: #EDE6D8;
+  --star-brown: #4A3728;
+  --earthy-brown: #6B4C3B;
+  --soft-pink: #F4B8C1;
+  --clover-green: #5B8C5A;
+
+  /* 텍스트 */
+  --text-primary: #2C1810;
+  --text-secondary: #6B4C3B;
+  --text-muted: #9C8B7A;
+
+  /* 배경 */
+  --bg-main: var(--cream);
+  --bg-card: #FFFFFF;
+  --bg-sage: var(--sage-green);
+
+  /* 테두리 */
+  --border-light: #E8DDD0;
+  --border-brown: var(--earthy-brown);
+
+  /* Foreground/Background for Tailwind */
+  --background: var(--cream);
+  --foreground: var(--text-primary);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-noto-sans-kr);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* === 폰트 === */
+body {
+  font-family: var(--font-noto-sans-kr), 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* === 텍스처 클래스 === */
+
+/* 별 패턴 배경 (PDF Page 1, 2) */
+.bg-star-pattern {
+  background-color: var(--sage-green);
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2l1.5 4.5H18l-3.7 2.7 1.4 4.3L12 11l-3.7 2.5 1.4-4.3L6 6.5h4.5z' fill='%234A3728' opacity='0.4'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* 클로버 패턴 배경 (PDF Page 3) */
+.bg-clover-pattern {
+  background-color: #FAFAF8;
+  background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7' cy='7' r='3' fill='%235B8C5A' opacity='0.25'/%3E%3Ccircle cx='21' cy='7' r='3' fill='%235B8C5A' opacity='0.25'/%3E%3Ccircle cx='7' cy='21' r='3' fill='%235B8C5A' opacity='0.25'/%3E%3Ccircle cx='21' cy='21' r='3' fill='%235B8C5A' opacity='0.25'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* 줄노트 배경 */
+.bg-lined-paper {
+  background-color: #FEFEF8;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    #D4C9B8 28px
+  );
+  background-size: 100% 28px;
+}
+
+/* 그리드 노트 배경 */
+.bg-grid-paper {
+  background-color: #FEFEF8;
+  background-image: 
+    linear-gradient(rgba(180, 165, 145, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 165, 145, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* 크래프트 페이퍼 */
+.bg-kraft-paper {
+  background-color: #C8A96E;
+  background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h1v1H0zm2 2h1v1H2z' fill='%23000' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* === 픽셀아트 렌더링 === */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* === 필기체 텍스트 === */
+.font-handwriting {
+  font-family: var(--font-gaegu), var(--font-nanum-pen), cursive;
+}
+
+/* === 마스킹테이프 === */
+.masking-tape {
+  position: relative;
+  display: inline-block;
+}
+.masking-tape::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 16px;
+  background-color: rgba(156, 175, 136, 0.7);
+  border-radius: 2px;
+}
+
+/* === 스크롤바 커스텀 === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sage-green);
+  border-radius: 3px;
+}
+
+/* === 모바일 safe area === */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
 }

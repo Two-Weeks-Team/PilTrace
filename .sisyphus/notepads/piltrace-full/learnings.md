@@ -57,3 +57,13 @@
   - TypeScript 검증: ✓ 통과 (npx tsc --noEmit)
   - Foreign key: cascade delete (diary→essays, essay→survey_responses), set null (user references)
   - Indexes: diaries_user_id_idx, essays_user_id_idx, essays_unique_code_idx
+
+## [T4 완료] TypeScript 타입
+- src/types/: essay.ts, agent.ts, auth.ts, api.ts
+- PipelineStatus enum: idle→phase1→survey→phase2→phase3→phase4→phase5→complete
+- 게스트 PIN은 클라이언트 타입에서 제외 (서버 전용)
+- AgentMetadata: 토큰 비용 추적 (totalTokens, totalCost, cachedTokens, phases[])
+- Phase 결과 타입: Phase1Result(questions), Phase2Result(outline+toneGuide), Phase3Result(draft), Phase4Result(critique), Phase5Result(essay)
+- API 요청 타입: GenerateEssayPhase1/2/3Request, CreateDiaryRequest, CreateEssayRequest, UpdateEssayRequest, GuestAccessRequest
+- 공통 응답: ApiError, ApiSuccess<T>
+- TypeScript 타입 체크: ✓ PASSED (npx tsc --noEmit)

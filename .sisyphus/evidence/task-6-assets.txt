@@ -1,0 +1,18 @@
+public/assets/characters/:
+total 32
+drwxr-xr-x@ 6 kimsejun  staff   192  3월  8 20:05 .
+drwxr-xr-x@ 5 kimsejun  staff   160  3월  8 20:05 ..
+-rw-r--r--@ 1 kimsejun  staff   798  3월  8 20:05 dinosaur-heart.svg
+-rw-r--r--@ 1 kimsejun  staff   846  3월  8 20:05 mouse-cafe.svg
+-rw-r--r--@ 1 kimsejun  staff   914  3월  8 20:05 sungsungi-envelope.svg
+-rw-r--r--@ 1 kimsejun  staff  1087  3월  8 20:05 sungsungi-keyboard.svg
+
+public/assets/decorations/:
+total 40
+drwxr-xr-x@ 7 kimsejun  staff  224  3월  8 20:06 .
+drwxr-xr-x@ 5 kimsejun  staff  160  3월  8 20:05 ..
+-rw-r--r--@ 1 kimsejun  staff  315  3월  8 20:06 binder-clip.svg
+-rw-r--r--@ 1 kimsejun  staff  331  3월  8 20:06 clover.svg
+-rw-r--r--@ 1 kimsejun  staff  486  3월  8 20:06 gingham-tape.svg
+-rw-r--r--@ 1 kimsejun  staff  456  3월  8 20:06 masking-tape-green.svg
+-rw-r--r--@ 1 kimsejun  staff  212  3월  8 20:05 star.svg

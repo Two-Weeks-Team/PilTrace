@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" style="image-rendering:pixelated">
+  <!-- 봉투 -->
+  <rect x="8" y="28" width="48" height="32" fill="#F5F0E8" stroke="#C8A96E" stroke-width="2" rx="2"/>
+  <!-- 봉투 플랩 -->
+  <polygon points="8,28 32,48 56,28" fill="none" stroke="#C8A96E" stroke-width="2"/>
+  <!-- 숭숭이 상체 (봉투에서 나옴) -->
+  <rect x="22" y="10" width="20" height="16" fill="#C8960C" rx="3"/>
+  <rect x="20" y="18" width="24" height="14" fill="#8B6914" rx="2"/>
+  <rect x="18" y="8" width="8" height="8" fill="#8B6914" rx="4"/>
+  <rect x="38" y="8" width="8" height="8" fill="#8B6914" rx="4"/>
+  <rect x="26" y="14" width="4" height="4" fill="#2C1810"/>
+  <rect x="34" y="14" width="4" height="4" fill="#2C1810"/>
+  <!-- 꽃 장식 -->
+  <circle cx="48" cy="36" fill="#F4B8C1" r="4"/>
+  <circle cx="16" cy="36" fill="#9CAF88" r="3"/>
+</svg>

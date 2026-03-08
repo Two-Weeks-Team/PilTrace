@@ -1,0 +1,98 @@
+PilTrace Design System Build Evidence
+=====================================
+
+Task: Design System Implementation (Task 5)
+Date: 2026-03-08
+
+FILES CREATED/MODIFIED:
+- src/lib/fonts.ts (NEW)
+  - Noto Sans KR (weights: 300, 400, 500, 700)
+  - Gaegu (weights: 300, 400, 700)
+  - Nanum Pen Script (via Google Fonts link)
+
+- src/app/globals.css (UPDATED)
+  - PilTrace color tokens (sage-green, cream, star-brown, etc.)
+  - Texture classes (bg-star-pattern, bg-clover-pattern, bg-lined-paper, bg-grid-paper, bg-kraft-paper)
+  - Pixel art rendering class
+  - Handwriting font class
+  - Masking tape decoration
+  - Custom scrollbar styling
+  - Mobile safe area support
+
+- src/app/layout.tsx (UPDATED)
+  - Imported notoSansKR and gaegu from @/lib/fonts
+  - Added Nanum Pen Script Google Fonts link
+  - Updated metadata to Korean (PilTrace — AI 에세이 저널링)
+  - Applied all font variables to body className
+
+BUILD OUTPUT:
+=============
+> piltrace@0.1.0 build
+> next build
+
+⚠ Found lockfile missing swc dependencies, patching...
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+- Experiments (use with caution):
+  ✓ viewTransition
+
+  Creating an optimized production build ...
+⚠ Found lockfile missing swc dependencies, patching...
+⚠ Lockfile was successfully patched, please run "npm install" to ensure @next/swc dependencies are downloaded
+⚠ Lockfile was successfully patched, please run "npm install" to ensure @next/swc dependencies are downloaded
+✓ Compiled successfully in 1509.6ms
+  Running TypeScript ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/4) ...
+  Generating static pages using 9 workers (1/4) 
+  Generating static pages using 9 workers (2/4) 
+  Generating static pages using 9 workers (3/4) 
+✓ Generating static pages using 9 workers (4/4) in 158.5ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+└ ○ /_not-found
+
+○  (Static)  prerendered as static content
+
+BUILD STATUS: ✓ SUCCESS
+
+DESIGN SYSTEM FEATURES:
+=======================
+1. Color Palette (CSS Variables):
+   - Sage Green: #9CAF88 (primary)
+   - Cream: #F5F0E8 (background)
+   - Star Brown: #4A3728 (accent)
+   - Earthy Brown: #6B4C3B (secondary)
+   - Soft Pink: #F4B8C1 (accent)
+   - Clover Green: #5B8C5A (accent)
+
+2. Typography:
+   - Primary: Noto Sans KR (Korean support)
+   - Handwriting: Gaegu + Nanum Pen Script
+   - Fallback: Apple SD Gothic Neo, Malgun Gothic
+
+3. Texture Classes:
+   - .bg-star-pattern: Sage green with star pattern
+   - .bg-clover-pattern: Cream with clover pattern
+   - .bg-lined-paper: Lined notebook effect
+   - .bg-grid-paper: Grid notebook effect
+   - .bg-kraft-paper: Kraft paper texture
+
+4. Special Effects:
+   - .pixel-art: Pixel-perfect rendering
+   - .font-handwriting: Handwriting font stack
+   - .masking-tape: Decorative masking tape effect
+   - .safe-bottom: Mobile safe area padding
+
+5. Tailwind v4 Integration:
+   - CSS-first approach (@import "tailwindcss")
+   - @theme inline for custom tokens
+   - CSS variables for dynamic theming
+
+VERIFICATION:
+- TypeScript compilation: ✓ PASS
+- Next.js build: ✓ PASS
+- Static page generation: ✓ PASS
+- No errors or critical warnings
