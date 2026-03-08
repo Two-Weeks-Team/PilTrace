@@ -1,6 +1,6 @@
 <div align="center">
 
-# PilTrace (필트레이스)
+# PilTrace (필적)
 
 **AI가 당신의 일기를 에세이로 바꿰드립니다**
 

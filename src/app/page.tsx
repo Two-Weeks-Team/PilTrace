@@ -36,7 +36,7 @@ export default function HomePage() {
               className="text-4xl font-handwriting mb-3"
               style={{ color: 'var(--star-brown)' }}
             >
-              필트레이스
+              필적(筆跡)
             </h1>
             <p
               className="text-base mb-8 leading-relaxed"
