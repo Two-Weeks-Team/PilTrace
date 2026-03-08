@@ -5,5 +5,6 @@
     "ses_3332b07c7ffeRAjsvIIj4vQ2kq"
   ],
   "plan_name": "piltrace-full",
-  "agent": "atlas"
+  "agent": "atlas",
+  "worktree_path": "/Users/kimsejun/GitHub/PilTrace"
 }
