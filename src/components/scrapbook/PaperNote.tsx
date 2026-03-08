@@ -28,14 +28,14 @@ export function PaperNote({
       {/* Binder clip decoration using SVG asset */}
       {clip && (
         <div
-          className="absolute -top-4 left-1/2 -translate-x-1/2 z-20"
+          className="absolute -top-6 left-1/2 -translate-x-1/2 z-20"
           aria-hidden="true"
         >
           <Image
             src="/assets/decorations/binder-clip.svg"
             alt=""
-            width={20}
-            height={32}
+            width={36}
+            height={52}
             className="pixel-art"
             style={{ imageRendering: 'pixelated' }}
           />
@@ -45,14 +45,14 @@ export function PaperNote({
       {/* Star sticker decoration using SVG asset */}
       {sticker && (
         <div
-          className="absolute -top-3 -right-3 z-20"
+          className="absolute -top-5 -right-5 z-20"
           aria-hidden="true"
         >
           <Image
             src="/assets/decorations/fabric-star.svg"
             alt=""
-            width={28}
-            height={28}
+            width={48}
+            height={48}
             className="pixel-art"
             style={{ imageRendering: 'pixelated' }}
           />
@@ -61,7 +61,7 @@ export function PaperNote({
 
       {/* Paper content */}
       <div
-        className={`relative rounded-sm shadow-md p-4 ${bgClass}`}
+        className={`relative rounded-lg shadow-lg p-4 ${bgClass}`}
         style={{ backgroundColor: 'var(--cream)' }}
       >
         {children}

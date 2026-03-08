@@ -33,8 +33,8 @@ export function MaskingTape({
         <Image
           src={tapeSrc}
           alt=""
-          width={60}
-          height={16}
+          width={100}
+          height={24}
           className="w-full h-full object-cover pixel-art"
           style={{ imageRendering: 'pixelated', opacity: 0.85 }}
         />
